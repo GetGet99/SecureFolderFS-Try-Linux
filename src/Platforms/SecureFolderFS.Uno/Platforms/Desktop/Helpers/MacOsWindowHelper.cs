@@ -96,7 +96,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.Helpers
 
         private static IntPtr GetNativeWindowHandle(Window window)
         {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
             try
             {
                 // Get the MacOSWindowNative instance

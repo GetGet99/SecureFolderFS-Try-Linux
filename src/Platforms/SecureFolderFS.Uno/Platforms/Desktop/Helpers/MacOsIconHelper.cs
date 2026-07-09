@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
 using SecureFolderFS.Uno.PInvoke;
 #endif
 
@@ -9,7 +9,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.Helpers
 {
     internal static class MacOsIconHelper
     {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
         public static void SetDockIcon(string iconPath)
         {
             if (!File.Exists(iconPath))

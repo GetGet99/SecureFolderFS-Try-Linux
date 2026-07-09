@@ -23,7 +23,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop
     /// <inheritdoc cref="IFileSystemInfo"/>
     internal sealed partial class SkiaWebDavFileSystem : WebDavFileSystem
     {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
         /// <inheritdoc/>
         public override async Task<string> GetVolumeNameAsync(string candidateName, CancellationToken cancellationToken = default)
         {

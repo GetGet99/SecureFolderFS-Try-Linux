@@ -84,7 +84,7 @@ namespace SecureFolderFS.Uno.ServiceImplementation
                     return true;
                 }
 
-#if __MACOS__ || __MACCATALYST__ || __UNO_SKIA_MACOS__
+#if __MACOS__ || __MACCATALYST__ || __UNO_SKIA_MACOS__FALSE
                 Process.Start("sh", ["-c", $"open {folder.Id}"]);
                 return true;
 #elif WINDOWS

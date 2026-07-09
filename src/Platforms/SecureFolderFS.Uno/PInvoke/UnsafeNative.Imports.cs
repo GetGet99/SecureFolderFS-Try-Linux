@@ -118,7 +118,7 @@ namespace SecureFolderFS.Uno.PInvoke
             IntPtr dwRefData);
 #endif
 
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
 
         public const uint CFNotificationSuspensionBehaviorDeliverImmediately = 4;
 
@@ -350,7 +350,7 @@ namespace SecureFolderFS.Uno.PInvoke
     }
 #endif
 
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
     [StructLayout(LayoutKind.Sequential)]
     internal struct CGPoint
     {

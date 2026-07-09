@@ -5,7 +5,7 @@ using SecureFolderFS.UI.ViewModels.Authentication;
 using SecureFolderFS.Uno.ViewModels.DeviceLink;
 using SecureFolderFS.Uno.ViewModels.WindowsHello;
 using SecureFolderFS.Uno.ViewModels.YubiKey;
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
 using SecureFolderFS.Shared.Extensions;
 using SecureFolderFS.Uno.Platforms.Desktop.ViewModels;
 #endif
@@ -36,7 +36,7 @@ namespace SecureFolderFS.Uno.TemplateSelectors
 
         protected override DataTemplate? SelectTemplateCore(ObservableObject? item, DependencyObject container)
         {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
             TouchIDTemplate ??= App.Instance?.Resources.Get("TouchIDRegisterTemplate") as DataTemplate;            
 #endif
 
@@ -46,7 +46,7 @@ namespace SecureFolderFS.Uno.TemplateSelectors
                 KeyFileLoginViewModel => KeyFileTemplate,
                 WindowsHelloLoginViewModel => WindowsHelloTemplate,
                 YubiKeyLoginViewModel => YubiKeyTemplate,
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
                 MacOSBiometricsLoginViewModel => TouchIDTemplate,
 #endif
                 DeviceLinkLoginViewModel => DeviceLinkTemplate,

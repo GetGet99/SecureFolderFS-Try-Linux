@@ -12,7 +12,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.ServiceImplementation
     {
         private EventHandler? _deviceLocked;
 
-#if !__UNO_SKIA_MACOS__
+#if !__UNO_SKIA_MACOS__FALSE
         /// <inheritdoc/>
         public event EventHandler? DeviceLocked
         {

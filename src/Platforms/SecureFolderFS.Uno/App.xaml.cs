@@ -374,7 +374,7 @@ namespace SecureFolderFS.Uno
             window.SetTitleBar(titleBar);
 #endif
 
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
             // Use native macOS APIs to configure the window
             MacOsWindowHelper.ConfigureFullSizeContentView(window);
             MacOsWindowHelper.CenterWindow(window);

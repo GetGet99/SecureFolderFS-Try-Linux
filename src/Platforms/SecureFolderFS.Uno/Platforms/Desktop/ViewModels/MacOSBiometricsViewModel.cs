@@ -12,7 +12,7 @@ using SecureFolderFS.Sdk.ViewModels.Controls.Authentication;
 using SecureFolderFS.Shared.ComponentModel;
 using SecureFolderFS.Shared.Models;
 using SecureFolderFS.Shared.SecureStore;
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
 using SecureFolderFS.Uno.PInvoke;
 #endif
 
@@ -55,7 +55,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.ViewModels
         /// </summary>
         public static bool IsSupported()
         {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
             return UnsafeNative.Biometrics.CanEvaluateBiometricPolicy();
 #else
             return false;
@@ -65,7 +65,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.ViewModels
         /// <inheritdoc/>
         public override Task RevokeAsync(string? id, CancellationToken cancellationToken = default)
         {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
             id ??= VaultId;
             var alias = $"{KEY_ALIAS_PREFIX}{id}";
             UnsafeNative.Biometrics.DeleteKey(alias);
@@ -76,7 +76,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.ViewModels
         /// <inheritdoc/>
         public override async Task<IResult<IKeyBytes>> EnrollAsync(string id, byte[]? data, CancellationToken cancellationToken = default)
         {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
             ArgumentNullException.ThrowIfNull(data);
 
             var alias = $"{KEY_ALIAS_PREFIX}{id}";
@@ -102,7 +102,7 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.ViewModels
         /// <inheritdoc/>
         public override Task<IResult<IKeyBytes>> AcquireAsync(string id, byte[]? data, CancellationToken cancellationToken = default)
         {
-#if __UNO_SKIA_MACOS__
+#if __UNO_SKIA_MACOS__FALSE
             ArgumentNullException.ThrowIfNull(data);
 
             var alias = $"{KEY_ALIAS_PREFIX}{id}";
