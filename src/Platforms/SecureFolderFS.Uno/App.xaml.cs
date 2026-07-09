@@ -368,10 +368,11 @@ namespace SecureFolderFS.Uno
                 MainWindowRootControl mainRootControl => mainRootControl.CustomTitleBar,
                 _ => null
             };
-
+#if !DESKTOP
             window.ExtendsContentIntoTitleBar = true;
             appWindow.TitleBar.ExtendsContentIntoTitleBar = true;
             window.SetTitleBar(titleBar);
+#endif
 
 #if __UNO_SKIA_MACOS__
             // Use native macOS APIs to configure the window
@@ -382,7 +383,7 @@ namespace SecureFolderFS.Uno
             // Add left padding for traffic light buttons
             var (leftPadding, _) = MacOsWindowHelper.GetTrafficLightButtonsInset();
             titleBar.Margin = new Thickness(leftPadding, 0, 0, 0);
-#elif !WINDOWS
+#elif !WINDOWS && false
             // For other non-Windows platforms, use OverlappedPresenter
             if (appWindow.Presenter is OverlappedPresenter overlappedPresenter)
             {

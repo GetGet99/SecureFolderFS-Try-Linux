@@ -3,7 +3,7 @@ using System.Reflection;
 using Microsoft.UI.Xaml;
 using Uno.UI.Xaml;
 using static SecureFolderFS.Uno.PInvoke.UnsafeNative;
-
+#if false
 namespace SecureFolderFS.Uno.Platforms.Desktop.Helpers
 {
     /// <summary>
@@ -149,3 +149,5 @@ namespace SecureFolderFS.Uno.Platforms.Desktop.Helpers
     }
 }
 
+
+#endif

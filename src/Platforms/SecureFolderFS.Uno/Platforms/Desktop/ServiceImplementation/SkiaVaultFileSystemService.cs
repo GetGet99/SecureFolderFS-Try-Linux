@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using SecureFolderFS.Core.FUSE;
 using SecureFolderFS.Sdk.Enums;
 using SecureFolderFS.Sdk.Models;
 using SecureFolderFS.Sdk.Services;
